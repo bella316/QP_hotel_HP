@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>新密市青屏宾馆</title>
+
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<header>
+	<ul>
+		<li><img src="img/logo.png" height="70px"></li>
+		<li>首页</li>
+		<li>新闻中心</li>
+		<li>网上预订</li>
+		<li>餐饮中心</li>
+		<li>会议中心</li>
+		<li>旅行社</li>
+		<li>宾馆相册</li>
+		<li>关于我们</li>
+		<li>标准化建设</li>
+	</ul>
+	<div class="pcHidden" style="float:right; padding:0 20px; line-height:60px; background-color: antiquewhite;">mobile menu</div>
+</header>
+
+<!-- Swiper -->
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+	  
+    <div class="swiper-slide slide-1">
+		<div class="full preload middle">
+		  <img src="img/hp1.jpg" class="swiper-lazy">
+		  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		</div>
+    </div>
+    <div class="swiper-slide slide-2">
+		<div class="homepage-left100"></div>
+		<div class="full preload middle">
+			<img src="img/hp5.jpg" class="swiper-lazy">
+			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		</div>
+    </div>
+    <div class="swiper-slide slide-3">
+		<div class="txtCenter"></div>
+		<div class="full preload middle">
+			<img src="img/hp6.jpg" class="swiper-lazy">
+			<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		</div>
+    </div>
+<!--   <div class="swiper-slide slide-4">
+      <div class="whiteTxt"></div>
+      <div class="full preload middle"><img src="img/hp7.jpg" class="swiper-lazy"><div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div></div>
+    </div>
+ -->
+	</div>
+
+	<!--分页器-->
+	<div class="swiper-pagination"></div>
+	<!--左箭头-->
+	<div class="swiper-button-prev swiper-button-white"></div>
+	<!--右箭头-->
+	<div class="swiper-button-next swiper-button-white"></div>
+</div>
+
+<div class="pcHidden" style="line-height:500px; text-align:center;">ohter content</div>
+<footer>your footer</footer>
+
+<!-- Swiper JS --> 
+<script src="js/jquery.min.js"></script>
+<!-- <script src="js/swiper.min.js"></script> -->
+<script src="js/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper --> 
+<script>
+  //   var swiper = new Swiper('.swiper-container', {
+  //       loop: true,
+		// lazy: {
+  //           //loadPrevNext: true,
+  //       },
+		// navigation: {
+		//   nextEl: '.swiper-button-next',
+		//   prevEl: '.swiper-button-prev',
+		// },
+		// pagination: {
+		//   el: '.swiper-pagination',
+		//   clickable: true,
+		// },
+  //   });
+  
+      var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        centeredSlides: true,
+		loop: true,
+		lazy: {
+		 	//loadPrevNext: true,
+		},
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+  
+    //0.625   5/8
+    function homeResize() {
+		
+    	WinHeight = $(window).height();
+    	WinWidth = $(window).width();
+    	fullBox = $(".swiper-slide .full");
+
+    	if (WinWidth > 768) {
+    		if (WinWidth / WinHeight > 1.6) {
+    			fullBox.width("100%").height(WinWidth * 0.625).css({
+					"position": 'absolute',
+    				"left": "0px",
+    				"top": (WinHeight - fullBox.height()) / 2 + "px"
+    			});
+    		} else {
+    			fullBox.width(WinHeight * 1.6).height("100%").css({
+					"position": 'absolute',
+    				"left": "-" + (fullBox.width() - WinWidth) / 2 + "px",
+    				"top": "0px"
+    			});
+    		}
+    	} else {
+    		fullBox.width("100%").height("auto").css({
+    			"position": 'static',
+    		});
+    	}
+    }
+
+    homeResize();
+
+    $(window).resize(function() {
+    	homeResize();
+    });
+</script>
+</body>
+</html>
