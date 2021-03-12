@@ -7,6 +7,19 @@ li {
 	list-style: none;
 }
 
+a {
+	display: block;
+	width: auto;
+	text-decoration: none;
+	padding: auto;
+}
+
+li a:hover {
+	background-color: #777;
+	color: white;
+	text-decoration: none;
+}
+
 html, body {
 	position: relative;
 	height: 100%;
