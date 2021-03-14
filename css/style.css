@@ -39,7 +39,7 @@ body {
 }
 
 .pcHidden {
-	display: none;
+	display: inline-block;
 }
 
 header {

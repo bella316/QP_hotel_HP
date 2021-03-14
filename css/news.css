@@ -1,0 +1,22 @@
+div.company_log{
+    /* margin: auto;
+    padding: auto; */
+
+}
+
+.logo{
+    display: inline-block;
+    
+}
+
+.menu{
+    display: inline-block;
+}
+
+.menu  > li{
+    display: inline-block;
+    
+}
+
+
+
